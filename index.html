@@ -5,94 +5,86 @@
 <title>Happy Birthday Madam Ji 🎉</title>
 
 <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        background: radial-gradient(circle, #1a1a2e, #000);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Segoe UI', sans-serif;
-        overflow: hidden;
-        color: white;
-    }
+body{
+    margin:0;
+    height:100vh;
+    background:radial-gradient(circle,#1a1a2e,#000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Segoe UI,sans-serif;
+    overflow:hidden;
+    color:white;
+}
 
-    .card {
-        background: rgba(255,255,255,0.12);
-        padding: 40px;
-        border-radius: 20px;
-        text-align: center;
-        box-shadow: 0 0 30px rgba(255,77,109,0.6);
-        z-index: 10;
-    }
+.card{
+    background:rgba(255,255,255,0.12);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(255,77,109,0.6);
+    z-index:10;
+}
 
-    h1 {
-        color: #ff4d6d;
-        margin-bottom: 20px;
-    }
+h1{color:#ff4d6d;margin-bottom:20px;}
 
-    button {
-        padding: 14px 30px;
-        font-size: 16px;
-        border: none;
-        border-radius: 30px;
-        background: #ff4d6d;
-        color: white;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+button{
+    padding:14px 30px;
+    font-size:16px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+}
 
-    button:hover {
-        transform: scale(1.08);
-        background: #ff2f5f;
-    }
+button:hover{transform:scale(1.08);}
 
-    .message {
-        margin-top: 25px;
-        font-size: 18px;
-        display: none;
-        animation: fadeIn 1.5s ease;
-        line-height: 1.6;
-    }
+.message{
+    margin-top:25px;
+    font-size:18px;
+    display:none;
+    animation:fadeIn 1.5s ease;
+    line-height:1.6;
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
 
-    /* Balloons */
-    .balloon {
-        position: absolute;
-        bottom: -100px;
-        font-size: 40px;
-        animation: floatUp 6s linear infinite;
-    }
+/* Balloons */
+.balloon{
+    position:absolute;
+    bottom:-100px;
+    font-size:40px;
+    animation:floatUp linear;
+}
 
-    @keyframes floatUp {
-        from { transform: translateY(0); opacity: 1; }
-        to { transform: translateY(-120vh); opacity: 0; }
-    }
+@keyframes floatUp{
+    from{transform:translateY(0);opacity:1;}
+    to{transform:translateY(-120vh);opacity:0;}
+}
 
-    /* Fireworks */
-    .firework {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background: transparent;
-        border-radius: 50%;
-        box-shadow:
-            0 0 10px #ff4d6d,
-            20px 0 #ffd166,
-            -20px 0 #06d6a0,
-            0 20px #4cc9f0,
-            0 -20px #f72585;
-        animation: explode 1s ease-out infinite;
-    }
+/* Fireworks */
+.firework{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    box-shadow:
+        0 0 10px #ff4d6d,
+        20px 0 #ffd166,
+        -20px 0 #06d6a0,
+        0 20px #4cc9f0,
+        0 -20px #f72585;
+    animation:explode 1.2s ease-out forwards;
+}
 
-    @keyframes explode {
-        from { transform: scale(0); opacity: 1; }
-        to { transform: scale(2.5); opacity: 0; }
-    }
+@keyframes explode{
+    from{transform:scale(0);opacity:1;}
+    to{transform:scale(2.5);opacity:0;}
+}
 </style>
 </head>
 
@@ -103,44 +95,45 @@
     <button onclick="startSurprise()">Click Here Madam Ji 💖</button>
 
     <div class="message" id="msg">
-        🎉 Happy Birthday palki My Champion 🎉<br><br>
+        🎉 Happy Birthday Champion 🎉<br><br>
         To the most <b>hardworking girl</b>,<br>
         our beloved <b>Madam Ji</b> 🌸<br><br>
-        Keep shining, keep winning 💫 
-
-                      -Your HELPLINE 😊❤️
+        Keep shining, keep winning 💫
     </div>
 </div>
 
 <script>
-function startSurprise() {
-    document.getElementById("msg").style.display = "block";
+let started=false;
 
-    // Balloons
-    for (let i = 0; i < 15; i++) {
-        let balloon = document.createElement("div");
-        balloon.className = "balloon";
-        balloon.innerHTML = "🎈";
-        balloon.style.left = Math.random() * 100 + "vw";
-        balloon.style.animationDuration = (4 + Math.random() * 3) + "s";
-        document.body.appendChild(balloon);
+function startSurprise(){
+    if(started) return;
+    started=true;
 
-        setTimeout(() => balloon.remove(), 7000);
-    }
+    document.getElementById("msg").style.display="block";
 
-    // Fireworks
-    for (let i = 0; i < 8; i++) {
-        let firework = document.createElement("div");
-        firework.className = "firework";
-        firework.style.left = Math.random() * 100 + "vw";
-        firework.style.top = Math.random() * 100 + "vh";
-        document.body.appendChild(firework);
+    setInterval(createBalloon,600);
+    setInterval(createFirework,400);
+}
 
-        setTimeout(() => firework.remove(), 1500);
-    }
+function createBalloon(){
+    let b=document.createElement("div");
+    b.className="balloon";
+    b.innerHTML="🎈";
+    b.style.left=Math.random()*100+"vw";
+    b.style.animationDuration=(5+Math.random()*3)+"s";
+    document.body.appendChild(b);
+    setTimeout(()=>b.remove(),8000);
+}
+
+function createFirework(){
+    let f=document.createElement("div");
+    f.className="firework";
+    f.style.left=Math.random()*100+"vw";
+    f.style.top=Math.random()*100+"vh";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1300);
 }
 </script>
 
 </body>
 </html>
-
