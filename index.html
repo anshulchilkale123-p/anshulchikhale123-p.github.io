@@ -1,104 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anshul | ECE & Software Portfolio</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
-    body { background: #0f172a; color: #e5e7eb; line-height: 1.6; }
-    a { color: #38bdf8; text-decoration: none; }
-    .container { max-width: 1100px; margin: auto; padding: 20px; }
-    header { text-align: center; padding: 60px 20px; }
-    header h1 { font-size: 2.8rem; }
-    header p { font-size: 1.2rem; color: #cbd5f5; }
-    .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #38bdf8; color: #020617; border-radius: 8px; font-weight: bold; }
-    section { margin: 60px 0; }
-    h2 { font-size: 2rem; margin-bottom: 20px; border-left: 5px solid #38bdf8; padding-left: 10px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background: #020617; padding: 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
-    footer { text-align: center; padding: 30px; color: #94a3b8; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Palki 🎂</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: pop 1.5s ease-in-out;
+            max-width: 400px;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .cake {
+            font-size: 70px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Floating balloons */
+        .balloon {
+            position: absolute;
+            font-size: 40px;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(-120vh); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Anshul</h1>
-    <p>ECE Student | Aspiring Software & R&D Engineer</p>
-    <a class="btn" href="#contact">Contact Me</a>
-  </header>
+    <!-- Balloons -->
+    <div class="balloon" style="left:10%; animation-delay:0s;">🎈</div>
+    <div class="balloon" style="left:30%; animation-delay:2s;">🎈</div>
+    <div class="balloon" style="left:60%; animation-delay:1s;">🎉</div>
+    <div class="balloon" style="left:80%; animation-delay:3s;">🎈</div>
 
-  <div class="container">
+    <div class="card">
+        <div class="cake">🎂</div>
+        <h1>Happy Birthday</h1>
+        <h2>Palki 💖</h2>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am an Electronics and Communication Engineering student passionate about software development,
-        core engineering, and R&D roles. I focus on building strong fundamentals in DSA, programming,
-        and electronics while working on real-world projects.
-      </p>
-    </section>
+        <p>
+            Wishing you a day filled with happiness, laughter,  
+            and all the things that make you smile 🌸  
+            May your life be as bright and beautiful as you are ✨
+        </p>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Programming</h3>
-          <p>C, C++, Python, DSA, OOPs</p>
+        <p>
+            Keep shining, keep dreaming, and keep being amazing 💫
+        </p>
+
+        <div class="footer">
+            With lots of love 💝
         </div>
-        <div class="card">
-          <h3>Core ECE</h3>
-          <p>Digital Electronics, Analog Basics, Microcontrollers, Sensors</p>
-        </div>
-        <div class="card">
-          <h3>Tools</h3>
-          <p>Git & GitHub, Linux, MATLAB (Basics), VS Code</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Smart Environmental Monitoring System</h3>
-          <p>Arduino-based system to monitor temperature, humidity, and air quality using sensors.</p>
-        </div>
-        <div class="card">
-          <h3>DSA Mini Projects</h3>
-          <p>Implementation of stacks, queues, linked lists, and trees in C++.</p>
-        </div>
-        <div class="card">
-          <h3>Portfolio Website</h3>
-          <p>This responsive personal portfolio built using HTML and CSS.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <div class="card">
-        <h3>B.E. in Electronics & Communication Engineering</h3>
-        <p>2025 – 2029</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Email: anshulchikhale28@gmail.com</p>
-        <p>GitHub: <a href="#">https://github.com/anshulchilkale123-p</a></p>
-        <p>LinkedIn: <a href="#">https://www.linkedin.com/in/anshul-chikhale-8a4a4b312/</a></p>
-      </div>
-    </section>
-
-  </div>
-
-  <footer>
-    <p>© 2025 Anshul | Built with ❤️ and consistency</p>
-  </footer>
+    </div>
 
 </body>
 </html>
+
