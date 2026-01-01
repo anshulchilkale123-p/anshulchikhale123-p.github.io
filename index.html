@@ -30,7 +30,12 @@
     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
     section{margin:64px 0}
     h2{margin:0 0 14px; font-size:1.6rem}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)); border:1px solid rgba(148,163,184,.18); border-radius:18px; padding:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)); border:1px solid rgba(148,163,184,.18); border-radius:18px; padding:20px; transition:transform .4s ease, box-shadow .4s ease}
+    .card:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 20px 40px rgba(34,211,238,.15)}
+    .project{cursor:pointer; position:relative; overflow:hidden}
+    .project::after{content:""; position:absolute; inset:0; background:radial-gradient(300px 120px at var(--x) var(--y), rgba(34,211,238,.25), transparent 40%); opacity:0; transition:opacity .4s}
+    .project.active{transform:scale(1.05) rotate(.5deg); box-shadow:0 25px 60px rgba(56,189,248,.35)}
+    .project.active::after{opacity:1}
     .tag{display:inline-block; padding:4px 10px; border-radius:999px; background:rgba(56,189,248,.15); color:#7dd3fc; margin:4px 6px 0 0; font-size:.85rem}
     .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
     .kpi{padding:14px; border-radius:14px; background:rgba(2,6,23,.6); border:1px dashed rgba(148,163,184,.25); text-align:center}
@@ -77,15 +82,24 @@
     <section id="projects">
       <h2>Projects</h2>
       <div class="grid">
-        <div class="card"><h3>Smart Environmental Monitor</h3><p>Multi-sensor node measuring temperature, humidity & air quality with real-time display.</p></div>
-        <div class="card"><h3>IoT Energy Meter</h3><p>ESP/Arduino based power monitoring with cloud dashboard & alerts.</p></div>
-        <div class="card"><h3>DSA Implementations</h3><p>Clean C++ implementations of stacks, queues, linked lists & trees.</p></div>
+        <div class="card project" onclick="openProject(this)">
+          <h3>Smart Environmental Monitor</h3>
+          <p>Multi-sensor node measuring temperature, humidity & air quality with real-time display.</p>
+        </div>
+        <div class="card project" onclick="openProject(this)">
+          <h3>IoT Energy Meter</h3>
+          <p>ESP/Arduino based power monitoring with cloud dashboard & alerts.</p>
+        </div>
+        <div class="card project" onclick="openProject(this)">
+          <h3>DSA Implementations</h3>
+          <p>Clean C++ implementations of stacks, queues, linked lists & trees.</p>
+        </div>
       </div>
     </section>
 
     <section id="education">
       <h2>Education</h2>
-      <div class="card"><b>B.E. – Electronics & Telecommunication</b><br/>2025–2029</div>
+      <div class="card"><b>B.E. – Electronics & Telecommunication</b><br/>2023–2027</div>
     </section>
 
     <section id="contact">
@@ -101,6 +115,18 @@
       © 2025 Anshul • ENTC Portfolio
     </footer>
   </div>
+  <script>
+    function openProject(card){
+      document.querySelectorAll('.project').forEach(p=>p.classList.remove('active'));
+      card.classList.add('active');
+    }
+    document.addEventListener('mousemove', e=>{
+      document.querySelectorAll('.project').forEach(p=>{
+        const r=p.getBoundingClientRect();
+        p.style.setProperty('--x', (e.clientX-r.left)+'px');
+        p.style.setProperty('--y', (e.clientY-r.top)+'px');
+      });
+    });
+  </script>
 </body>
 </html>
- 
