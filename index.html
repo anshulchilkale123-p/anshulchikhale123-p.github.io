@@ -1,142 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Happy Birthday Madam Ji 🎉</title>
-
-<style>
-body{
-    margin:0;
-    height:100vh;
-    background:radial-gradient(circle,#1a1a2e,#000);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Segoe UI,sans-serif;
-    overflow:hidden;
-    color:white;
-}
-
-.card{
-    background:rgba(255,255,255,0.12);
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 0 30px rgba(255,77,109,0.6);
-    z-index:10;
-}
-
-h1{color:#ff4d6d;margin-bottom:20px;}
-
-button{
-    padding:14px 30px;
-    font-size:16px;
-    border:none;
-    border-radius:30px;
-    background:#ff4d6d;
-    color:white;
-    cursor:pointer;
-}
-
-button:hover{transform:scale(1.08);}
-
-.message{
-    margin-top:25px;
-    font-size:18px;
-    display:none;
-    animation:fadeIn 1.5s ease;
-    line-height:1.6;
-}
-
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(20px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-/* Balloons */
-.balloon{
-    position:absolute;
-    bottom:-100px;
-    font-size:40px;
-    animation:floatUp linear;
-}
-
-@keyframes floatUp{
-    from{transform:translateY(0);opacity:1;}
-    to{transform:translateY(-120vh);opacity:0;}
-}
-
-/* Fireworks */
-.firework{
-    position:absolute;
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    box-shadow:
-        0 0 10px #ff4d6d,
-        20px 0 #ffd166,
-        -20px 0 #06d6a0,
-        0 20px #4cc9f0,
-        0 -20px #f72585;
-    animation:explode 1.2s ease-out forwards;
-}
-
-@keyframes explode{
-    from{transform:scale(0);opacity:1;}
-    to{transform:scale(2.5);opacity:0;}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anshul | ENTC Engineer Portfolio</title>
+  <meta name="description" content="Creative portfolio of an ENTC (Electronics & Telecommunication) engineering student focused on embedded systems, IoT, and software." />
+  <style>
+    :root{
+      --bg:#020617; --card:#020617; --ink:#e5e7eb; --muted:#94a3b8; --accent:#22d3ee; --accent2:#38bdf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink); background:radial-gradient(1200px 600px at 10% -10%, #0b3b47 0%, transparent 60%),
+      radial-gradient(800px 500px at 110% 10%, #0b2b4a 0%, transparent 55%), var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--accent2); text-decoration:none}
+    .wrap{max-width:1100px; margin:auto; padding:24px}
+    header{display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center; padding:56px 0}
+    @media (max-width:900px){header{grid-template-columns:1fr}}
+    .badge{display:inline-flex; gap:8px; align-items:center; padding:6px 12px; border-radius:999px; background:rgba(34,211,238,.12); color:var(--accent)}
+    h1{font-size:clamp(2rem,4vw,3rem); margin:.5rem 0}
+    .lead{color:#cbd5f5; font-size:1.05rem}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+    .btn{padding:12px 18px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#020617; font-weight:700}
+    .ghost{padding:12px 18px; border-radius:12px; border:1px solid rgba(148,163,184,.25)}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0)); border:1px solid rgba(148,163,184,.18); border-radius:18px; padding:22px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+    section{margin:64px 0}
+    h2{margin:0 0 14px; font-size:1.6rem}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)); border:1px solid rgba(148,163,184,.18); border-radius:18px; padding:20px}
+    .tag{display:inline-block; padding:4px 10px; border-radius:999px; background:rgba(56,189,248,.15); color:#7dd3fc; margin:4px 6px 0 0; font-size:.85rem}
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .kpi{padding:14px; border-radius:14px; background:rgba(2,6,23,.6); border:1px dashed rgba(148,163,184,.25); text-align:center}
+    footer{border-top:1px solid rgba(148,163,184,.2); padding:28px 0; color:var(--muted)}
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <header>
+      <div>
+        <span class="badge">⚡ ENTC • Embedded • IoT</span>
+        <h1>Anshul</h1>
+        <p class="lead">Electronics & Telecommunication (ENTC) engineering student building <b>embedded systems</b>, <b>IoT</b>, and <b>software</b> that work in the real world.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="kpis">
+          <div class="kpi"><b>ECE/ENTC</b><br/><small>Core Focus</small></div>
+          <div class="kpi"><b>DSA</b><br/><small>C/C++</small></div>
+          <div class="kpi"><b>IoT</b><br/><small>Arduino</small></div>
+        </div>
+        <p style="margin-top:14px; color:#cbd5f5">Targeting internships in <b>Embedded</b>, <b>R&D</b>, and <b>Software</b>.</p>
+      </div>
+    </header>
 
-<div class="card">
-    <h1>🎂 Birthday Surprise 🎂</h1>
-    <button onclick="startSurprise()">Click Here Madam Ji 💖</button>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card"><h3>Embedded & ENTC</h3>
+          <span class="tag">Arduino</span><span class="tag">8051/AVR</span><span class="tag">Sensors</span><span class="tag">UART/I2C/SPI</span><span class="tag">Digital</span>
+        </div>
+        <div class="card"><h3>Software</h3>
+          <span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">DSA</span><span class="tag">OOP</span>
+        </div>
+        <div class="card"><h3>Tools</h3>
+          <span class="tag">Git/GitHub</span><span class="tag">Linux</span><span class="tag">MATLAB</span><span class="tag">VS Code</span>
+        </div>
+      </div>
+    </section>
 
-    <div class="message" id="msg">
-        🎉 Happy Birthday palki😊 my Champion ✨ 🎉<br><br>
-        To the most <b>hardworking girl</b>,<br>
-        our beloved <b>Madam Ji</b> 🌸<br><br>
-        Keep shining, keep winning 💫
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card"><h3>Smart Environmental Monitor</h3><p>Multi-sensor node measuring temperature, humidity & air quality with real-time display.</p></div>
+        <div class="card"><h3>IoT Energy Meter</h3><p>ESP/Arduino based power monitoring with cloud dashboard & alerts.</p></div>
+        <div class="card"><h3>DSA Implementations</h3><p>Clean C++ implementations of stacks, queues, linked lists & trees.</p></div>
+      </div>
+    </section>
 
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card"><b>B.E. – Electronics & Telecommunication</b><br/>2025–2029</div>
+    </section>
 
-                   - your helpline😊💖
-    </div>
-</div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: your.email@gmail.com</p>
+        <p>GitHub: github.com/yourusername</p>
+        <p>LinkedIn: linkedin.com/in/yourprofile</p>
+      </div>
+    </section>
 
-<script>
-let started=false;
-
-function startSurprise(){
-    if(started) return;
-    started=true;
-
-    document.getElementById("msg").style.display="block";
-
-    setInterval(createBalloon,600);
-    setInterval(createFirework,400);
-}
-
-function createBalloon(){
-    let b=document.createElement("div");
-    b.className="balloon";
-    b.innerHTML="🎈";
-    b.style.left=Math.random()*100+"vw";
-    b.style.animationDuration=(5+Math.random()*3)+"s";
-    document.body.appendChild(b);
-    setTimeout(()=>b.remove(),8000);
-}
-
-function createFirework(){
-    let f=document.createElement("div");
-    f.className="firework";
-    f.style.left=Math.random()*100+"vw";
-    f.style.top=Math.random()*100+"vh";
-    document.body.appendChild(f);
-    setTimeout(()=>f.remove(),1300);
-}
-</script>
-
+    <footer>
+      © 2025 Anshul • ENTC Portfolio
+    </footer>
+  </div>
 </body>
 </html>
+ 
